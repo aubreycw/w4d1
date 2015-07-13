@@ -14,6 +14,19 @@ url = Addressable::URI.new(
   }
 ).to_s
 
-puts url
+def create_user
+  url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/users.json'
+  ).to_s
 
-puts RestClient.get(url)
+  puts RestClient.post(
+    url,
+    { user: { name: "Gizmo", email: "gizmo@gizmo.gizmo" } }
+  )
+end
+
+
+# puts RestClient.get(url)
