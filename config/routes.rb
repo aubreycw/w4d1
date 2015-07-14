@@ -63,7 +63,9 @@ Rails.application.routes.draw do
 
   resources :contact_share, only: [:create, :destroy]
 
+  resources :comments, only: [:index, :create, :show, :destroy, :update]
 
+  
   # post 'users' => 'users#create'
   # get 'users' => 'users#index'
   # get 'users/new' => 'users#new', :as => 'new_user'
